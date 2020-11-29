@@ -1,0 +1,179 @@
+<div class="c-inner-profile-tile">
+          <div class="profile-header">
+            <div class="img-section">
+              <img src="/posts/head.jpg" alt="" />
+            </div>
+            <div class="user-details">
+              <p>Raghu Ram</p>
+              <p>20:20 ! 14-11-2020</p>
+            </div>
+          </div>
+          <div class="c-post">
+            <img src="/posts/head.jpg" alt="" />
+          </div>
+          <div class="c-post-details">
+            <div class="c-user-like">
+              <a href="">
+                <i class="fas fa-thumbs-up" style="color: #0056b3"> </i>
+              </a>
+              <p>100</p>
+            </div>
+            <!-- BUTTON POPUP 4 -->
+            <button data-toggle="modal" data-target="#comment-popup">
+              <i class="fas fa-comment"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="comment-popup" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body c-comments-scroll-body">
+                    <div class="c-comment-tile">
+                      <div class="c-comment-tile-header">
+                        <img src="/images/DEFAULT_PROFILE.jpg" alt=""
+                          style="width: 30px; height: 30px; border-radius: 100%; margin-right: 10px" />
+                        <p>Raghu Ram {16-22-2020: 8:27 am}</p>
+                      </div>
+                      <div class="c-comment-tile-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, modi esse perferendis qui
+                        numquam
+                        deleniti ea quaerat. Dolorem, cupiditate repellendus.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <input type="text" placeholder="type something here" class="c-input" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ********************************************* -->
+            <!-- BUTTON POPUP 5 -->
+            <button data-toggle="modal" data-target="#share-post">
+              <i class="fas fa-share"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="share-post" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Share Post with friends</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body c-comments-scroll-body">lorem200</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ********************************************* -->
+          </div>
+        </div>
+
+
+
+        ****************************************************************************************8
+       post tile div
+        <div class="c-inner-profile-tile">
+          <div class="profile-header">
+            <div class="img-section">
+              <img src="../public/images/head.jpg" alt="" />
+            </div>
+            <div class="user-details">
+              <p>Raghu Ram</p>
+              <p>20:20 ! 14-11-2020</p>
+            </div>
+          </div>
+          <div class="c-post">
+            <img src="../public/images/head.jpg" alt="" />
+          </div>
+          <div class="c-post-details">
+            <div class="c-user-like">
+              <button href="">
+                <i class="fas fa-thumbs-up" style="color: #0056b3"> </i>
+              </button>
+              <p>100</p>
+            </div>
+            <!-- BUTTON POPUP 4 -->
+            <button data-toggle="modal" data-target="#comment-popup">
+              <i class="fas fa-comment" style="color: #333"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="comment-popup" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body c-comments-scroll-body">
+                    <div class="c-comment-tile">
+                      <div class="c-comment-tile-header">
+                        <img src="../public/images/head.jpg" alt=""
+                          style="width: 30px; height: 30px; border-radius: 100%; margin-right: 10px" />
+                        <p>Raghu Ram {16-22-2020: 8:27 am}</p>
+                      </div>
+                      <div class="c-comment-tile-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, modi esse perferendis qui
+                        numquam
+                        deleniti ea quaerat. Dolorem, cupiditate repellendus.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <input type="text" placeholder="type something here" class="c-input" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ********************************************* -->
+            <!-- BUTTON POPUP 5 -->
+            <button data-toggle="modal" data-target="#share-post">
+              <i class="fas fa-share" style="color: #333"></i>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="share-post" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Share Post with friends</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body c-comments-scroll-body">lorem200</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ********************************************* -->
+          </div>
+        </div>
+
+
+
+        server code = 1883 lines
+        front end javascript and html = 3546 (above included)
+        css = 4588 lines (above included)

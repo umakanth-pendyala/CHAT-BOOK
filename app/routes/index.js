@@ -28,4 +28,12 @@ module.exports = app => {
   app.use("/user", require("../routes/activity.js"));
   app.use("/user", require("../routes/post.js"));
   app.use("/user", require("../routes/sign-out.js"));
+  app.use('/user', require('../routes/view-posts.js'));
+  app.use('/user', require('../routes/handle-likes.js'));
+  app.use('/user', require('../routes/comments.js'));
+  app.use('/user', require('../routes/view-profile.js'));
+  app.use('/user', require('../routes/friend-requests.js'));
+  app.use('/user', require('../routes/request-history.js'));
+  app.use('/user', require('../routes/edit-profile.js'));
+  app.use('/', require('../routes/about.js'));
 };

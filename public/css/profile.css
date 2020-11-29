@@ -88,7 +88,7 @@ label {
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -179,6 +179,20 @@ label {
 #comment-popup .modal-dialog .modal-body .c-comment-tile .c-comment-tile-body {
   color: #111;
   padding-left: 3rem;
+}
+
+.c-user-like {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.c-user-like button {
+  /* margin-left: 10px; */
+  margin-right: 0;
+  border-bottom: 1px solid black;
 }
 
 

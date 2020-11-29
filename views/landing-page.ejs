@@ -1,193 +1,196 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login | Sign up</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/utils.css" />
-    <link rel="stylesheet" href="/css/landing-page.css" />
-    <!-- testing MDB -->
-    <!--  -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <%- include("./components/nav.ejs") %>
-    <header>
-      <% if (errorMessageActive) { %>
-      <div class="alert alert-danger" role="alert">Invalid SignUp details! Or Email Arleady exists</div>
-      <% } %>
-      <div class="c-general-container">
-        <div class="c-image-section">
-          <img src="/images/test.png" alt="image" />
-        </div>
-        <div class="c-signup-section">
-          <form action="/user/signup" method="POST">
-            <div class="c-form-group">
-              <div class="c-form-item">
-                <input class="alerter a" type="text" placeholder="name" name="name" />
-              </div>
-              <div class="c-form-item">
-                <input class="alerter b" type="email" placeholder="email" name="email" />
-              </div>
-              <div class="c-form-item">
-                <input class="alerter c" type="password" placeholder="password" name="password" />
-              </div>
-              <div class="c-form-item">
-                <input class="alerter c" type="password" placeholder="re-enter password" name="rePassword" />
-              </div>
-              <div class="c-form-item c-selections">
-                <input type="date" placeholder="dd/mm/yyyy" name="date" class="alerter d" />
-                <!-- <input type="" placeholder="email"> -->
-                <select name="" id="" class="browser-default custom-select" name="gender">
-                  <!-- <option selected>Gender</option> -->
-                  <option value="1" selected>Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">Other</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="c-btn sign-up c-btn-dark-border c-secondary-btn">Sign Up</button>
-          </form>
-        </div>
+
+<head>
+  <title>Login | Sign up</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/utils.css" />
+  <link rel="stylesheet" href="/css/landing-page.css" />
+  <!-- testing MDB -->
+  <!--  -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <%- include("./components/nav.ejs") %>
+  <header>
+    <% if (errorMessageActive) { %>
+    <div class="alert alert-danger" role="alert">
+      Invalid SignUp details! Or Email Arleady exists
+    </div>
+    <% } %>
+    <div class="c-general-container">
+      <div class="c-image-section">
+        <img src="/images/test.png" alt="image" />
       </div>
-    </header>
-    <footer>
-      <h5>2020 &copy; all Rights reserved. <a href="">Developed By Umakanth and Kaif ali Khan</a></h5>
-    </footer>
-  </body>
-  <script>
-    if (<%= errorMessageActive %>) {
+      <div class="c-signup-section">
+        <form action="/user/signup" method="POST">
+          <div class="c-form-group">
+            <div class="c-form-item">
+              <input class="alerter a" type="text" placeholder="name" name="name" />
+            </div>
+            <div class="c-form-item">
+              <input class="alerter b" type="email" placeholder="email" name="email" />
+            </div>
+            <div class="c-form-item">
+              <input class="alerter c" type="password" placeholder="password" name="password" />
+            </div>
+            <div class="c-form-item">
+              <input class="alerter c" type="password" placeholder="re-enter password" name="rePassword" />
+            </div>
+            <div class="c-form-item c-selections">
+              <input type="date" placeholder="dd/mm/yyyy" name="dateOfBirth" class="alerter d" />
+              <!-- <input type="" placeholder="email"> -->
+              <select id="" class="browser-default custom-select" name="gender">
+                <!-- <option selected>Gender</option> -->
+                <option value="1" selected>Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="c-btn sign-up c-btn-dark-border c-secondary-btn">
+            Sign Up
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <footer>
+    <h5>
+      2020 &copy; all Rights reserved.
+      <a href="">Developed By Umakanth and Kaif ali Khan</a>
+    </h5>
+  </footer>
+</body>
+<script>
+  if (<%= errorMessageActive %>) {
+    setTimeout(function () {
+      document.querySelector('.alert').remove();
+    }, 5000);
+  }
+  $('.sign-up').on('click', (e) => {
+    validateSignUpDetails(e);
+  });
+  function validateSignUpDetails(e) {
+    var validationSuccessfull = true;
+
+    var name = $('input[name = "name"]').val();
+    var email = $('input[name = "email"]').val();
+    var password_1 = $('input[name = "password"]').val();
+    var password_2 = $('input[name = "rePassword"]').val();
+    var date = $('input[name = "date"]').val();
+    if (password_1 !== password_2 || password_1 == "") {
+      validationSuccessfull = false;
+      alert('i am called');
+      $('input[name = "password"]').val("");
+      $('input[name = "rePassword"]').val("");
+      $('input[name = "password"]').attr('placeholder', "passwords do not match");
+      $('input[name = "rePassword"]').attr('placeholder', "passwords do not match");
+      change_placeholder_color('.c', 'red');
+    }
+    if (email.search('@gitam.in') == -1 || email.length <= 9) {
+      validationSuccessfull = false;
+      $('input[name = "email"]').val("");
+      console.log('invalid email');
+      change_placeholder_color('.b', 'red');
+      $('input[name = "email"]').attr('placeholder', "Not a valid email");
+    }
+    if (name == "") {
+      validationSuccessfull = false;
+      change_placeholder_color('.a', 'red');
+      $('input[name = "name"]').attr('placeholder', 'Name Should not be null');
+    }
+    if (date == "") {
+      validationSuccessfull = false;
+      change_placeholder_color('.d', 'red');
+      $('input[name = "date"]').attr('placeholder', 'Invalid Date');
+    }
+
+    if (validationSuccessfull == false) {
+      e.preventDefault();
       setTimeout(function () {
-        document.querySelector('.alert').remove();
-      }, 5000);
+        setToDefault();
+      }, 5000)
     }
-    $('.sign-up').on('click', (e) => {
-      validateSignUpDetails(e);
-    });
-    function validateSignUpDetails (e) {
-      var validationSuccessfull = true;
+  }
+  function setToDefault() {
+    change_placeholder_color('.alerter', 'darkgrey');
+    var name = $('input[name = "name"]').val();
+    var email = $('input[name = "email"]').val();
+    var password_1 = $('input[name = "password"]').val();
+    var password_2 = $('input[name = "rePassword"]').val();
+    $('input[name = "password"]').attr('placeholder', "EnterPassword");
+    $('input[name = "rePassword"]').attr('placeholder', "Re-Enter Password");
+    $('input[name = "name"]').attr('placeholder', 'EnterName');
+    $('input[name = "email"]').attr('placeholder', 'EnterYour collage email');
+  }
 
-      var name = $('input[name = "name"]').val();
-      var email = $('input[name = "email"]').val();
-      var password_1 = $('input[name = "password"]').val();
-      var password_2 = $('input[name = "rePassword"]').val();
-      var date = $('input[name = "date"]').val();
-      if (password_1 !== password_2 || password_1 == "") {
-        validationSuccessfull = false;
-        alert('i am called');
-        $('input[name = "password"]').val("");
-        $('input[name = "rePassword"]').val("");
-        $('input[name = "password"]').attr('placeholder', "passwords do not match");
-        $('input[name = "rePassword"]').attr('placeholder', "passwords do not match");
-        change_placeholder_color('.c', 'red');
-      }
-      if (email.search('@gitam.in') == -1 || email.length <= 9) {
-        validationSuccessfull = false;
-        $('input[name = "email"]').val("");
-        console.log('invalid email');
-        change_placeholder_color('.b', 'red');
-        $('input[name = "email"]').attr('placeholder', "Not a valid email");
-      }
-      if (name == "") {
-        validationSuccessfull = false;
-        change_placeholder_color('.a', 'red');
-        $('input[name = "name"]').attr('placeholder', 'Name Should not be null');
-      }
-      if (date == "") {
-        validationSuccessfull = false;
-        change_placeholder_color('.d', 'red');
-        $('input[name = "date"]').attr('placeholder', 'Invalid Date');
-      }
+  $('.sign-in').on('click', (e) => {
+    validateSignInDetails(e);
+  });
 
-      if (validationSuccessfull == false) {
-        e.preventDefault();
-        setTimeout(function () {
-          setToDefault();
-        },5000)
-      }
+  function validateSignInDetails(e) {
+    var validationSuccessfull = true;
+    var email = $('.sign-in-email').val();
+    var password = $('.sign-in-password').val();
+    if (email.search('@gitam.in') == -1 || email.length <= 9) {
+      validationSuccessfull = false;
+      $('.sign-in-email').val("");
+      change_placeholder_color('.sign-in-email', 'red');
+      $('.sign-in-email').attr('placeholder', "Not a valid email");
     }
-    function setToDefault () {
-      change_placeholder_color('.alerter', 'darkgrey');
-      var name = $('input[name = "name"]').val();
-      var email = $('input[name = "email"]').val();
-      var password_1 = $('input[name = "password"]').val();
-      var password_2 = $('input[name = "rePassword"]').val();
-      $('input[name = "password"]').attr('placeholder', "EnterPassword");
-      $('input[name = "rePassword"]').attr('placeholder',"Re-Enter Password");
-      $('input[name = "name"]').attr('placeholder', 'EnterName');
-      $('input[name = "email"]').attr('placeholder', 'EnterYour collage email');
+    if (password.trim().length == 0) {
+      validationSuccessfull = false;
+      $('.sign-in-password').val("");
+      change_placeholder_color('.sign-in-password', 'red');
+      $('.sign-in-password').attr('placeholder', "Password Cannot be empty");
     }
 
-    $('.sign-in').on('click', (e) => {
-      validateSignInDetails(e);
-    });
+    if (validationSuccessfull == false) {
+      e.preventDefault();
+      setTimeout(function () {
+        setToDefaultForSignInFields();
+      }, 5000)
+    }
+  }
 
-    function validateSignInDetails(e) {
-      var validationSuccessfull = true;
-      var email = $('.sign-in-email').val();
-      var password = $('.sign-in-password').val();
-      if (email.search('@gitam.in') == -1 || email.length <= 9) {
-        validationSuccessfull = false;
-        $('.sign-in-email').val("");
-        change_placeholder_color('.sign-in-email', 'red');
-        $('.sign-in-email').attr('placeholder', "Not a valid email");
-      }
-      if (password.trim().length == 0) {
-        validationSuccessfull = false;
-        $('.sign-in-password').val("");
-        change_placeholder_color('.sign-in-password', 'red');
-        $('.sign-in-password').attr('placeholder', "Password Cannot be empty");
-      }
 
-      if (validationSuccessfull == false) {
-        e.preventDefault();
-        setTimeout(function () {
-          setToDefaultForSignInFields();
-        },5000)
-      }
+  // console.log(<%= userRequestedForSignIn %>);
+  // console.log( `<%= userSignInCredentialDetails %>);
+  if (<%= userRequestedForSignIn %>) {
+
+    if (!<%= userSignInCredentialDetails.email %>) {
+      //TRUE IF EMAIL IS CORRECT
+      change_placeholder_color('.sign-in-email', 'red');
+      $('.sign-in-email').attr('placeholder', "Not a valid email");
+      setTimeout(function () {
+        setToDefaultForSignInFields();
+      }, 4000)
+    }
+    if (!<%= userSignInCredentialDetails.password %> ) {
+      //TRUE IF PASSWORD IS CORRECT
+      change_placeholder_color('.sign-in-password', 'red');
+      $('.sign-in-password').attr('placeholder', "Invalid Password");
+      setTimeout(function () {
+        setToDefaultForSignInFields();
+      }, 4000)
     }
 
 
-    // console.log(<%= userRequestedForSignIn %>);
-    // console.log( `<%= userSignInCredentialDetails %>);
-    if (<%= userRequestedForSignIn %>) {
-
-      if (!<%= userSignInCredentialDetails.email %>) {
-        //TRUE IF EMAIL IS CORRECT
-        change_placeholder_color('.sign-in-email', 'red');
-        $('.sign-in-email').attr('placeholder', "Not a valid email");
-        setTimeout(function() {
-          setToDefaultForSignInFields();
-        }, 4000)
-      }
-      if (!<%= userSignInCredentialDetails.password%> ) {
-        //TRUE IF PASSWORD IS CORRECT
-        change_placeholder_color('.sign-in-password', 'red');
-        $('.sign-in-password').attr('placeholder', "Invalid Password");
-        setTimeout(function () {
-          setToDefaultForSignInFields();
-        }, 4000)
-      }
-
-
-      function change_placeholder_color(target_class,color_choice) {
-        $("body").append("<style>" + target_class +"::placeholder{color:" +  color_choice + "}</style>")
-      }
-
-      function setToDefaultForSignInFields() {
-        change_placeholder_color('.sign-in-email', 'darkgrey');
-        change_placeholder_color('.sign-in-password', 'darkgrey');
-        $('.sign-in-email').attr('placeholder', "Enter email");
-        $('.sign-in-password').attr('placeholder', "Enter Password");
-      }
+    function change_placeholder_color(target_class, color_choice) {
+      $("body").append("<style>" + target_class + "::placeholder{color:" + color_choice + "}</style>")
     }
-  </script>
+
+    function setToDefaultForSignInFields() {
+      change_placeholder_color('.sign-in-email', 'darkgrey');
+      change_placeholder_color('.sign-in-password', 'darkgrey');
+      $('.sign-in-email').attr('placeholder', "Enter email");
+      $('.sign-in-password').attr('placeholder', "Enter Password");
+    }
+  }
+</script>
+
 </html>

@@ -1,7 +1,9 @@
 <% if (userIsAuthenticated != true) { %>
 <nav class="dark-nav-bottom-border">
   <div class="nav-container">
-    <div class="c-logo"><h2 style="color: #fff">Chat Book</h2></div>
+    <div class="c-logo">
+      <h2 style="color: #fff">Chat Book</h2>
+    </div>
     <div class="c-form-group">
       <form action="/user/signin" method="POST">
         <div class="c-email">
@@ -18,24 +20,28 @@
 <% } else { %>
 <nav class="dark-nav-bottom-border">
   <div class="nav-container">
-    <div class="c-logo"><h2 style="color: #fff">Chat Book</h2></div>
+    <div class="c-logo">
+      <h2 style="color: #fff">Chat Book</h2>
+    </div>
     <div class="c-search-main">
       <input type="text" placeholder="Search something" />
     </div>
     <div class="c-nav-items">
       <div class="c-profile-img">
-        <img src="/images/DEFAULT_PROFILE.jpg" alt="" />
+        <img src="<%= profilePicURL %>" alt="" />
       </div>
       <div class="c-profile-name">
         <h3 style="color: #fff"><%= username %></h3>
       </div>
+      <a href="/" style="color: #fff; margin-right: 1rem;"><i class="fas fa-home fa-2x"></i></a>
       <div class="c-gear">
         <div class="dropdown">
-          <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="fas fa-cog fa-2x"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a class="dropdown-item" href="/user/editProfile">Edit Profile</a>
             <a class="dropdown-item" href="#">Change Password</a>
             <a class="dropdown-item" href="/user/logout">Log out</a>
           </div>

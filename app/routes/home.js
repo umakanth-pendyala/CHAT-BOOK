@@ -45,6 +45,10 @@ router.get("/", (req, res) => {
   return;
 });
 
+const getUserDocuments = () => {
+
+}
+
 module.exports = router;
 
 // let verifiedUser = false;

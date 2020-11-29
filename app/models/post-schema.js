@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  user_Id: {
+  user: {
     type: Schema.Types.ObjectId,
-    ref: "user",
+    required: true
+    // ref: "user",
   },
-  postsInforamtion: [
+  postInformation: [
     {
       postTitle: {
         type: String,
@@ -17,9 +18,21 @@ const postSchema = new Schema({
       postDescription: {
         type: String,
       },
-      numberOfLikes: {
-        type: Number,
-        default: 0,
+
+      likes: {
+        numberOfLikes: {
+          type: Number,
+          default: 0,
+        },
+        likedBy: [{
+          user: {
+            type: Schema.Types.ObjectId,
+          }
+        }]
+      },
+      postType: {
+        type: String,
+        required: true,
       },
       postTime: {
         type: Date,
@@ -27,6 +40,6 @@ const postSchema = new Schema({
       },
     },
   ],
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model("post", postSchema);

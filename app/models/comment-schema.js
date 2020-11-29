@@ -12,15 +12,15 @@ const commentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "user",
       },
-      userName: {
-        type: String,
-        required: true,
-      },
       comment: {
         type: String,
+      },
+      timeOfComment: {
+        type: Date,
+        default: Date.now()
       },
     },
   ],
 });
 
-module.exports = mongoose.model("commnet", commentSchema);
+module.exports = mongoose.model("comment", commentSchema);
